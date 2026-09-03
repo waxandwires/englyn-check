@@ -1,0 +1,46 @@
+{
+  "_": "SINGLE NORMATIVE SOURCE for the speech-risk word list. Read by scripts/englyn-check.mjs AND by englyn/testing/harness/scan_text_transform_speech.py. Do NOT copy these values into either file: five instances of the copied-contract defect were found on 2026-08-18, the last two by no instrument at all, because documents quoted an enum they did not import.",
+  "_defect": "A CSS text-transform uppercases text, WebKit hands the TRANSFORMED string to the accessibility tree, and a screen reader reads a short word as an initialism. 'What this buys us' is spoken 'What this buys U-S'.",
+  "observed": [
+    "us",
+    "it"
+  ],
+  "_observed_note": "Heard 2026-08-17, VoiceOver + Safari + WebKit, first agent-driven capture. axe/html-validate/englyn-check were all green at the time.",
+  "likely": [
+    "am",
+    "pm",
+    "id",
+    "ok",
+    "tv",
+    "pc"
+  ],
+  "_likely_note": "Established abbreviations of the same shape. Not individually heard.",
+  "excluded": [
+    "or",
+    "in",
+    "on",
+    "as",
+    "no",
+    "to",
+    "of",
+    "at",
+    "be",
+    "we",
+    "he",
+    "my",
+    "do",
+    "if",
+    "so",
+    "up",
+    "go",
+    "me",
+    "is",
+    "an",
+    "by"
+  ],
+  "_excluded_note": "Common English words first, abbreviations second. Flagging them would fire on nearly every sentence and train everyone to ignore this check. Padding a criterion until it catches everything is how a check stops meaning anything.",
+  "correctly_spelled": [
+    "ai"
+  ],
+  "_correctly_spelled_note": "Words whose SPELLED form is the intended pronunciation, so uppercasing them is not a defect. Ruled by Micah 2026-08-19: 'ai' should be 'A-I'. The tag 'AI at work' spoken 'A-I at work' is CORRECT. Listed rather than silently dropped, because the next person to read this list will wonder why an obvious initialism is absent -- and because a risk list that flags a correct pronunciation trains people to ignore it."
+}
